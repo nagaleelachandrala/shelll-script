@@ -2,18 +2,6 @@
 
 USERID=$(id -u)
 
-VALIDATE(){
-
-if [ $? - ne 0]
-then
-
-       echo "$2 ..FAILURE"
-        exit 1
-   else 
-     echo "$2 ..SUCESS"    
-   fi
-}
-
 if [ $USERID -ne 0 ]
 then
     echo "ERROR :: you must hv sudo access to run the script "
@@ -26,8 +14,6 @@ if [ $? - ne 0]
 then
 
    dnf install mysql -y
-
-   VALIDATE $? "Installing MYSQL"
 
    if [ $? - ne 0]
    then
@@ -47,8 +33,13 @@ then
 
     dnf install git -y 
 
-    VALIDATE $? "Installing git"
-    
+    if [ $? - ne 0]
+    then
+        echo "installing GIT..FAILURE"
+        exit 1
+    else 
+        echo "installing GIT..SUCESS"    
+    fi
 else
      echo "git is already installed"
 fi     
