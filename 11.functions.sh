@@ -37,7 +37,7 @@ then
 
     dnf install git -y 
 
-     VALIDATE $? " installing git"
+ VALIDATE $? " installing git"
     
     
     else
