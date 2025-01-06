@@ -27,7 +27,7 @@ fi
 
 dnf list installed mysql &>>$LOG_FILE
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then
 
      dnf install mysql -y &>>$LOG_FILE
