@@ -38,7 +38,7 @@ else
 
  dnf list installed git &>>$LOG_FILE
 
-if [ $? - ne 0]
+if [ $? -ne 0]
 then
 
     dnf install git -y 
