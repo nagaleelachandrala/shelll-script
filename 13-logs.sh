@@ -50,5 +50,5 @@ then
     
     
     else
-     echo -e  "git is already $Y installed $N"
+     echo -e  "git is already $Y INSTALLED $N"
 fi     
